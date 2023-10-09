@@ -2,6 +2,7 @@ package hu.zsuzsi.springtanulas.guru.spring6webapp.domain;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -23,7 +24,7 @@ public class Publisher {
     private String zip;
 
     @OneToMany(mappedBy = "publisher")
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
     public Long getId() {
         return id;
